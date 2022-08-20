@@ -51,18 +51,55 @@
 // letter(names);
 
 // Assignment Task? 
-const pic = ['Shubham', 'singh', 'rathore', 'This', 'is', 'my', 'Assignment'];
-function checkFirstChar(arr){
-    const upperCase = [];
-    const lowerCase = [];
-    arr.forEach(element => {
-       if(element[0] == element.charAt(0).toUpperCase()) {
-        upperCase.push(element);
-         }else {
+// const pic = ['Shubham', 'singh', 'rathore', 'This', 'is', 'my', 'Assignment'];
+// function checkFirstChar(arr){
+//     const upperCase = [];
+//     const lowerCase = [];
+//     arr.forEach(element => {
+//        if(element[0] == element.charAt(0).toUpperCase()) {
+//         upperCase.push(element);
+//          }else {
             
-        }
-});
-    console.log(upperCase);
+//         }
+// });
+//     console.log(upperCase);
     
-}
-checkFirstChar(pic);
+// }
+// checkFirstChar(pic);
+
+// Problem 1: Checking Sum Zero 
+// [-5, -4, -3, -2, 0, 2, 4, 6, 8] -> Input
+// [-4, -4] -> Output
+ 
+// function getSumPairZero(array) {
+//        for(let number of array){
+//         for(let i = 1; i < array.length; i++){
+//             if(number + array[i] === 0){
+//                 return [number, array[i]];
+//             }
+//         }
+//        }
+// }
+// const result = getSumPairZero([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
+// console.log(result);
+
+// Second Method to solve this problem.
+
+function findSumZero(array) {
+     let left = 0;
+     let right = array.length - 1;
+
+     while(left < right){
+    sum = array[left] + array[right];
+    if(sum === 0){
+        return [array[left], array[right]];
+    }else if (sum > 0){
+    right--;
+    }else{
+        left++;
+    }
+    }
+    }
+    const result = findSumZero([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
+     console.log(result);
+
