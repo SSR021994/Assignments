@@ -85,21 +85,50 @@
 
 // Second Method to solve this problem.
 
-function findSumZero(array) {
-     let left = 0;
-     let right = array.length - 1;
+// function findSumZero(array) {
+//      let left = 0;
+//      let right = array.length - 1;
 
-     while(left < right){
-    sum = array[left] + array[right];
-    if(sum === 0){
-        return [array[left], array[right]];
-    }else if (sum > 0){
-    right--;
-    }else{
-        left++;
-    }
-    }
-    }
-    const result = findSumZero([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
-     console.log(result);
+//      while(left < right){
+//     sum = array[left] + array[right];
+//     if(sum === 0){
+//         return [array[left], array[right]];
+//     }else if (sum > 0){
+//     right--;
+//     }else{
+//         left++;
+//     }
+//     }
+//     }
+//     const result = findSumZero([-5, -4, -3, -2, 0, 2, 4, 6, 8]);
+//      console.log(result);
 
+    //  String Anagram.
+    // 'hello' -> 'llheo'
+    // 'shubh' -> 'hhubs'
+
+    // condition
+    // length check (for both strings)
+    // String 'hello'
+    // {h:1, e:0, l:2, o:1}
+
+    function isAnagram(string1,string2){
+        if(string1.length !== string2.length){
+            return false;
+        }
+        let count = {}
+        for(let letter of string1){
+            count[letter] = (count[letter] || 0) + 1 ;
+            console.log(count[letter]);
+        }
+        console.log(count);
+        for(let item of string2){
+          if (!count[item]) {
+            return false;
+          }
+          count[item] -=1;
+    }
+    return true;
+}
+    const check = isAnagram('hello', 'llleo');
+    console.log(check);
