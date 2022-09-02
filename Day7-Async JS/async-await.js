@@ -7,7 +7,7 @@ const data = [
     },
     {
         name: "SSR",
-        profession: "Survey Progrrammer"
+        profession: "Survey Programmer"
     }
 ];
 function getData() {
