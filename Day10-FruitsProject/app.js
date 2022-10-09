@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
+
 // Connection to MongoDB
 
 mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true});
+
 
 // Create a Schema
 
@@ -25,28 +27,30 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 
 //Create new fruit document
 
-const fruit = new Fruit({
-    name: "Peach",
-    rating: 9,
-    review: "Peaches are so yummy!"
-});
+
+
+// const fruit = new Fruit({
+//     name: "Peach",
+//     rating: 9,
+//     review: "Peaches are so yummy!"
+// });
 
 //fruit.save();
 
 
 //New Schema Add Person
 
-const personSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
-});
+// const personSchema = new mongoose.Schema({
+//     name: String,
+//     age: Number,
+// });
 
-const Person = mongoose.model("Person", personSchema);
+// const Person = mongoose.model("Person", personSchema);
 
-const person = new Person({
-    name: "Shubham",
-    age: 26
-});
+// const person = new Person({
+//     name: "Shubham",
+//     age: 26
+// });
 
 //person.save();
 
@@ -87,13 +91,14 @@ Fruit.find(function(err, fruits){
     }else {
         console.log(fruits);
 
-        mongoose.connection.close();
+        // mongoose.connection.close();
 
         //If we want to print only fruit names then
 
-        fruits.forEach(function(fruit){
-            console.log(fruit.name);
-        });
+        // fruits.forEach(function(fruit){
+        //     console.log(fruit.name);
+        // });
     }
 });
+
 

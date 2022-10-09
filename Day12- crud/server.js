@@ -36,7 +36,7 @@ app.get("/student", async function (req, res) {
 
 // update route
 app.put("/student/:id", async function (req, res) {
-  // after colon would be your key and value you sned from postman
+  // after colon would be your key and value you send from postman
   // params are parameters
   try {
     // findByIdAndUpdate -> 2 parameters/ arguments i.e. 1- id , 2 - payload
@@ -58,4 +58,4 @@ app.delete("/student/:id", async function (req, res) {
   }
 });
 
-app.listen(PORT, console.log("Server listening on port " + PORT));
+app.listen(PORT, console.log("Server listening on port " + PORT));s

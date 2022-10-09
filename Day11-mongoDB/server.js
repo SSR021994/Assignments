@@ -12,17 +12,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
+  
   res.send("working");
 });
 
-app.post("/adduser", (request, response) => {
+app.post("/post", async (request, response) => {
 
-const {name, phone} = request.body;
-console.log(name, phone);
-response.send("Please check your console");
+const data = new UserModel({
+  name:request.body.name,
+  phone:request.body.phone
 });
 
+const val = data.save();
+response.json(val);
 
+});
 
 app.listen(PORT, function () {
   console.log("Server running on port", PORT);
